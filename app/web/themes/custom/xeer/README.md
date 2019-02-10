@@ -1,35 +1,22 @@
-<!-- @file Instructions for subtheming using the Sass Starterkit. -->
-<!-- @defgroup sub_theming_sass -->
-<!-- @ingroup sub_theming -->
-# Sass Starterkit
 
-Below are instructions on how to create a Bootstrap sub-theme using a Sass
-preprocessor.
+# Xeer theme
 
-- [Prerequisites](#prerequisites)
-- [Additional Setup](#setup)
-- [Overrides](#overrides)
+## this a simple sub-theme of bootstrap
 
-## Prerequisites
-- Read the @link getting_started Getting Started @endlink and
-  @link sub_theming Sub-theming @endlink documentation topics.
-- You must understand the basic concept of using the [Sass] CSS pre-processor.
-- You must use a **[local Sass compiler](https://www.google.com/search?q=sass+compiler)**.
-- You must use the [Bootstrap Framework Source Files] ending in the `.scss`
-  extension, not files ending in `.css`.
+It is sass compiled css with laravel-mix.
 
-## Additional Setup {#setup}
-Download and extract the **latest** 3.x.x version of
-[Bootstrap Framework Source Files] into the root of your new sub-theme. After
-it has been extracted, the directory should be renamed (if needed) so it reads
-`./xeer/bootstrap`.
+### Main commands :
+Enable automatic compilation when developing :
 
-If for whatever reason you have an additional `bootstrap` directory wrapping the
-first `bootstrap` directory (e.g. `./xeer/bootstrap/bootstrap`), remove the
-wrapping `bootstrap` directory. You will only ever need to touch these files if
-or when you upgrade your version of the [Bootstrap Framework].
+`$ npm run watch`
 
-{.alert.alert-warning} **WARNING:** Do not modify the files inside of
+Uglify css and js before deploying to prod :
+
+`$ npm run production`
+
+
+
+**WARNING:** Do not modify the files inside of
 `./xeer/bootstrap` directly. Doing so may cause issues when upgrading the
 [Bootstrap Framework] in the future.
 
