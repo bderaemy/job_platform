@@ -35,6 +35,7 @@
         "drupal-composer/drupal-scaffold": "^2.5",
         "drupal/admin_toolbar": "^1.25",
         "drupal/adminimal_admin_toolbar": "^1.8",
+        "drupal/bootstrap": "^3.17",
         "drupal/captcha": "^1.0@beta",
         "drupal/console": "^1.0.2",
         "drupal/core": "^8.6.0",
