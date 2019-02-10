@@ -1,0 +1,44 @@
+version: '3.4'
+
+services:
+
+  drupal:
+    image: xeer/jobs-demo-drupal:latest
+    entrypoint: /usr/local/dev/entrypoint
+    environment:
+      - DRUPAL_DATABASE_USER=drupal
+      - DRUPAL_DATABASE_NAME=drupal
+      - DRUPAL_DATABASE_PASSWORD=drupal_local
+      - DRUPAL_WEBSITE_HOSTNAME=xeer.localhost
+      - DRUPAL_DATABASE_HOSTNAME=mysql
+      - XDEBUG_CONFIG=remote_host=${LOCAL_IP_ADDRESS}
+      - PHP_IDE_CONFIG=serverName=jobs-demo-drupal
+      - DOCKER_USER=www-data
+      - DOCKER_GROUP=www-data
+      - HOST_USER_ID=${HOST_USER_ID}
+      - HOST_GROUP_ID=${HOST_GROUP_ID}
+    ports:
+      - 8042:80
+      - 2222:2222
+    volumes:
+      - ${PWD}/app:/var/www
+      - ${PWD}/docker:/usr/local/dev
+    restart: on-failure
+
+  mysql:
+    image: mysql:5.7
+    ports:
+      - 3307:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: drupal_local
+      MYSQL_PASSWORD: drupal_local
+      MYSQL_DATABASE: drupal
+      MYSQL_USER: drupal
+    restart: always
+    volumes:
+      - "mysql_data:/var/lib/mysql:rw"
+    command: ["--max_allowed_packet=32M"]
+
+volumes:
+  mysql_data:
+    driver: local
