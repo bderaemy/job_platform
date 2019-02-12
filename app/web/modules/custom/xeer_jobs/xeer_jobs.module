@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Contains xeer_jobs.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function xeer_jobs_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the xeer_jobs module.
+    case 'help.page.xeer_jobs':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Allows the creation and publication of jobs') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function xeer_jobs_theme() {
+  return [
+    'xeer_jobs' => [
+      'render element' => 'children',
+    ],
+  ];
+}

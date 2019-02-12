@@ -1,0 +1,5 @@
+name: 'Xeer Jobs platform'
+type: module
+description: 'Allows the creation and publication of jobs'
+core: 8.x
+package: 'Custom'

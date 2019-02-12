@@ -24,7 +24,7 @@ printf "===========================\n"
 
 DOCKER_TAG="${DOCKER_TAG:=$(composer config -f app/composer.json name):latest}"
 
-docker build -t $DOCKER_TAG .
+#docker build -t $DOCKER_TAG .
 
 docker-compose -p $DOCKER_PROJECT up -d
 #sleep 6

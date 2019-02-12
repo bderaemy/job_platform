@@ -1,0 +1,14 @@
+
+# Job position menu items definition
+entity.jobs_entity.collection:
+  title: 'Job position list'
+  route_name: entity.jobs_entity.collection
+  description: 'List Job position entities'
+  parent: system.admin_structure
+  weight: 100
+
+jobs_entity.admin.structure.settings:
+  title: 'Job position settings'
+  description: 'Configure Job position entities'
+  route_name: jobs_entity.settings
+  parent: system.admin_structure

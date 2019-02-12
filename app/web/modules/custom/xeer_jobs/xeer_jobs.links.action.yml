@@ -1,0 +1,5 @@
+entity.jobs_entity.add_form:
+  route_name: entity.jobs_entity.add_form
+  title: 'Add Job position'
+  appears_on:
+    - entity.jobs_entity.collection
